@@ -1,0 +1,262 @@
+*,
+*::before,
+*::after{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul{
+  list-style-type: none;
+}
+.container{
+  max-width: 1366px !important;
+  width: 100%;
+}
+body{
+  background-image: url("https://static3.avast.com/10002656/web/i/v2/components/bg/bg-faint-orange.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+._Headr1{
+  text-align: center;
+}
+._Main1{
+  padding: 20px 20px;
+}
+._Headr1 {
+  text-align: center;
+}
+._Headr1 > h2 {
+  color: #e91e63;
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+._Headr1 > p {
+  font-size: 17px;
+}
+._homepage {
+  padding: 20px 0px;
+  display: flex;
+  align-items: center;
+}
+.-left1 {
+  flex: 0 0 48%;
+  width: 48%;
+  margin-right: 12px;
+}
+._rght1 {
+  flex: 0 0 44%;
+  width: 44%;
+}
+._Password1 {
+  margin-bottom: 30px;
+}
+._Password2 {
+  border: 1px solid gray;
+  padding: 6px 12px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+._Password4 {
+  display: flex;
+  align-items: center;
+}
+._Password5 {
+  background: rgb(0, 123, 255);
+  border-radius: 6px;
+}
+._Password5 > span {
+  display: inline-block;
+  color: #fff;
+  padding: 6px 12px;
+  font-weight: 500;
+  font-size: 16px;
+}
+._Password6 {
+  padding-left: 12px;
+  cursor: pointer;
+}
+._Password6 > button {
+  background: rgb(0, 123, 255);
+  border: none;
+  color: #fff;
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+}
+._passwordl1 {
+  padding: 0px 12px 30px;
+}
+._passwordl2 {
+  display: flex;
+  align-items: center;
+}
+._passwordl3 {
+  flex: 0 0 50%;
+  width: 100%;
+}
+._passwordl6 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 0 50%;
+}
+._passwordl5 {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #e91e63;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  background: transparent;
+  color: #e91e63;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+._passwordl5:hover::after{
+  transform: scale(1);
+}
+._char1 {
+  padding: 0 12px 0px 12px;
+}
+._char2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+._char3 {
+  flex: 0 0 50%;
+}
+._char4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 0 50%;
+}
+._char5 > label {
+  display: inline-block;
+  padding-left: 4px;
+}
+._char3 > h3 {
+  color: #e91e63;
+  font-size: 22px;
+  font-weight: 700;
+}
+._passwordl3 > h3 {
+  color: #e91e63;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+@media only screen and (min-width:1010px) and (max-width:1150px){
+  ._rght1 {
+    flex: 0 0 50%;
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width:1009px){
+  ._passwordl2 {
+    flex-direction: column;
+    justify-content: center;
+  }
+  ._passwordl3 {
+    flex: 0 0 100%;
+    width: 100%;
+    text-align: center;
+  }
+  ._passwordl6 {
+    flex: 0 0 100%;
+    margin-top: 14px;
+    width: 100%;
+  }
+  ._char2 {
+    flex-direction: column;
+  }
+  ._char3 {
+    flex: 0 0 100%;
+    width: 100%;
+    text-align: center;
+  }
+  ._char4 {
+    flex: 0 0 100%;
+    width: 100%;
+    margin-top: 15px;
+  }
+  ._homepage {
+    flex-direction: column;
+  }
+  .-left1 {
+    flex: 0 0 100%;
+    width: 100%;
+    margin-right: 0px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  ._rght1 {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+  body{
+    width: 100%;
+    height: 100%;
+  }
+}
+@media only screen and (max-width:459px){
+  ._Headr1 > h2 {
+    font-size: 28px;
+  }
+  ._Headr1 > p {
+    font-size: 16px;
+  }
+  ._Password3 {
+    font-size: 14px;
+  }
+  ._Password5 > span {
+    font-size: 13px;
+  }
+  ._Password6 > button {
+    font-size: 13px;
+    cursor: pointer;
+  }
+  ._Main1 {
+    padding: 20px 10px;
+  }
+  ._Password6 {
+    position: absolute;
+    bottom: -33px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  ._Password2 {
+    position: relative;
+  }
+  
+  ._passwordl1 {
+    padding: 20px 12px 30px;
+  }
+}
+
+@media only screen and (max-width:332px){
+ 
+  ._Password5 > span {
+    padding: 6px 6px;
+
+  }
+}
