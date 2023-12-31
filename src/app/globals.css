@@ -73,12 +73,11 @@ body{
   align-items: center;
 }
 ._Password5 {
-  background: rgb(0, 123, 255);
   border-radius: 6px;
 }
 ._Password5 > span {
   display: inline-block;
-  color: #fff;
+  color: #333;
   padding: 6px 12px;
   font-weight: 500;
   font-size: 16px;
