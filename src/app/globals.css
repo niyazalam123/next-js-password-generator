@@ -78,10 +78,11 @@ body{
 }
 ._Password5 > span {
   display: inline-block;
-  color: #333;
+  color: #fff;
   padding: 6px 12px;
   font-weight: 500;
   font-size: 16px;
+
 }
 ._Password6 {
   padding-left: 12px;
