@@ -10,7 +10,7 @@ const CharacterUsed = () => {
                     </div>
                     <div className='_char4'>
                         <div className='_char5'>
-                            <input type="checkbox" name="" id="one1" />
+                            <input type="checkbox" name="" id="one1"/>
                             <label htmlFor="one1">ABC</label>
                         </div>
                         <div className='_char5'>

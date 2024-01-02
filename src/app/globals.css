@@ -85,7 +85,7 @@ body{
 }
 ._Password6 {
   padding-left: 12px;
-  cursor: pointer;
+  position: relative;
 }
 ._Password6 > button {
   background: rgb(0, 123, 255);
@@ -164,13 +164,38 @@ body{
   font-weight: 700;
 }
 
-/* .-left2 {
+._Password9 {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: -1000px;
+  background: #007bff;
+  color: #fff;
+  top: -47px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3px 6px;
+  border-radius: 4px;
+  z-index: 999999;
+  opacity: 0;
   transition: all 0.3s ease;
-} */
+}
+._Password9Show{
+  opacity: 1;
+}
+._Password9 > h4 {
+  font-size: 13px;
+  font-weight: 600;
+}
+._Password9 > span {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  position: absolute;
+  background: #007bff;
+  top: 16px;
+  z-index: -1;
+  border-radius: 1px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg) translateZ(0);
+}
 
 @media only screen and (min-width:1010px) and (max-width:1150px){
   ._rght1 {

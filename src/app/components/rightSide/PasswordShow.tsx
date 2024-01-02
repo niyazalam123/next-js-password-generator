@@ -12,8 +12,10 @@ const PasswordShow: React.FC<Props> = ({ passwordLength }) => {
     const [smallAlphabet, SetSmallAlphabet] = useState<string>("abcdefghijklmnopqrstuvwxyz");
     const [digit, setDigit] = useState<string>("1234567890");
     const [specialCharc, setSpecialCharc] = useState<string>("@#$%^&*)({}~][?><");
-    const [length2, setLength2] = useState("Weak");
-    const [backgroundColor2,setBackgroundColor2] = useState("yellow");
+    const [length2, setLength2] = useState<string>("Weak");
+    const [backgroundColor2, setBackgroundColor2] = useState<string>("yellow");
+    const [showCopyBtn, setShowCopyBtn] = useState<boolean>(false);
+    const [password, setPassword] = useState<string>("dn7CEOJW1omadOKcJY12");
 
     useEffect(() => {
         if (passwordLength < 6 && passwordLength >= 1) {
@@ -34,27 +36,39 @@ const PasswordShow: React.FC<Props> = ({ passwordLength }) => {
         }
         else if (passwordLength <= 20 && passwordLength >= 17) {
             setLength2("Very Strong");
-            setBackgroundColor2("green")
+            setBackgroundColor2("green");
         }
-    },[passwordLength]);
+    }, [passwordLength]);
 
-    // function passwordGenerate(password:number){
-        
-    // }
+    async function passwordCopy() {
+        try {
+            await navigator.clipboard.writeText(password);
+            setShowCopyBtn(true);
+            setTimeout(() => {
+                setShowCopyBtn(false);
+            }, 1500)
+        } catch (error) {
+            alert('Copying to clipboard failed. Please try manually.' +  error);
+        }
+    }
 
     return (
         <>
             <div className='_Password1'>
                 <div className='_Password2'>
                     <div className='_Password3'>
-                        <span>dn7CEOJW1omadOKcJY12</span>
+                        <span>{password}</span>
                     </div>
                     <div className='_Password4'>
-                        <div className='_Password5' style = {{backgroundColor:`${backgroundColor2}`}}>
+                        <div className='_Password5' style={{ backgroundColor: `${backgroundColor2}` }}>
                             <span>{length2}</span>
                         </div>
                         <div className='_Password6'>
-                            <button title="Copy the password">
+                            <div className={`_Password9 ${showCopyBtn ? "_Password9Show" : ""}`}>
+                                <h4>Copied</h4>
+                                <span className='_Password10'></span>
+                            </div>
+                            <button title="Copy the password" onClick={passwordCopy}>
                                 <span><FaRegCopy /></span>
                             </button>
                         </div>
