@@ -4,10 +4,13 @@ import { LuRefreshCcw } from "react-icons/lu";
 
 interface Props {
     passwordLength:number;
-    setPasswordLength:React.Dispatch<React.SetStateAction<number>>
+    setPasswordLength:React.Dispatch<React.SetStateAction<number>>;
+    passwordGenerator:(arg:number)=>void;
 }
 
-const PasswordLength:React.FC<Props> = ({passwordLength,setPasswordLength}) => {
+const PasswordLength:React.FC<Props> = ({passwordLength,setPasswordLength,passwordGenerator}) => {
+    const [rotate,setRotate] = useState<number>(1);
+    const [count,setCount] = useState(1);
 
     function passwordDecrease(){
         if (passwordLength>1){
@@ -20,6 +23,12 @@ const PasswordLength:React.FC<Props> = ({passwordLength,setPasswordLength}) => {
             setPasswordLength((prev:number)=>prev+1)
         }
     }
+
+    function createNewPassword(){
+        passwordGenerator(passwordLength);
+        setCount(count+1)
+        setRotate(count*360);
+    }
     return (
         <>
             <div className='_passwordl1'>
@@ -31,8 +40,8 @@ const PasswordLength:React.FC<Props> = ({passwordLength,setPasswordLength}) => {
                         <button className='_passwordl5' title ="Decrease the password length" onClick={passwordDecrease}>
                             <span>-</span>
                         </button>
-                        <button className='_passwordl5 _passwordl50 ' title ="Refresh the page">
-                            <span><LuRefreshCcw /></span>
+                        <button className='_passwordl5 _passwordl50 ' title ="Refresh the page" onClick = {createNewPassword}>
+                            <span style={{ transform: `rotate(-${rotate}deg)`}}><LuRefreshCcw /></span>
                         </button>
                         <button className='_passwordl5' title ="Increase the password length" onClick={passwordIncrease}>
                             <span>+</span>

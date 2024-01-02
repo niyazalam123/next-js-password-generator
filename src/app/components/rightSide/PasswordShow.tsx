@@ -1,21 +1,18 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import { FaRegCopy } from "react-icons/fa";
+import PasswordLength from './PasswordLength';
 
 interface Props {
     passwordLength: number;
+    password:string;
+    passwordGenerator:(arg2: number) => void;
 }
 
-const PasswordShow: React.FC<Props> = ({ passwordLength }) => {
-
-    const [capitalAlphbet, SetCapitalAlphbet] = useState<string>("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-    const [smallAlphabet, SetSmallAlphabet] = useState<string>("abcdefghijklmnopqrstuvwxyz");
-    const [digit, setDigit] = useState<string>("1234567890");
-    const [specialCharc, setSpecialCharc] = useState<string>("@#$%^&*)({}~][?><");
+const PasswordShow: React.FC<Props> = ({ passwordLength,passwordGenerator,password }) => {
     const [length2, setLength2] = useState<string>("Weak");
     const [backgroundColor2, setBackgroundColor2] = useState<string>("yellow");
     const [showCopyBtn, setShowCopyBtn] = useState<boolean>(false);
-    const [password, setPassword] = useState<string>("dn7CEOJW1omadOKcJY12");
 
     useEffect(() => {
         if (passwordLength < 6 && passwordLength >= 1) {
@@ -51,6 +48,12 @@ const PasswordShow: React.FC<Props> = ({ passwordLength }) => {
             alert('Copying to clipboard failed. Please try manually.' +  error);
         }
     }
+
+    useEffect(()=>{
+        passwordGenerator(passwordLength);
+    }, [passwordLength]);
+
+   
 
     return (
         <>

@@ -128,10 +128,13 @@ body{
   overflow: hidden;
   position: relative;
   z-index: 1;
+  transition: all 0.3s ease;
 }
-._passwordl5:hover::after{
-  transform: scale(1);
+._passwordl5>span{
+  transition: all 0.3s ease;
+  display: inline-block;
 }
+
 ._char1 {
   padding: 0 12px 0px 12px;
 }
