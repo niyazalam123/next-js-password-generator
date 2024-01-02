@@ -51,6 +51,7 @@ body{
   flex: 0 0 48%;
   width: 48%;
   margin-right: 12px;
+  position: relative;
 }
 ._rght1 {
   flex: 0 0 44%;
@@ -162,6 +163,14 @@ body{
   font-size: 22px;
   font-weight: 700;
 }
+
+/* .-left2 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -1000px;
+  transition: all 0.3s ease;
+} */
 
 @media only screen and (min-width:1010px) and (max-width:1150px){
   ._rght1 {

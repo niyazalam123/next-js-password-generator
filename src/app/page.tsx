@@ -1,7 +1,6 @@
 import React from "react"
 import Header from "./components/Header";
-import RightPart from "@/app/components/rightSide/RightPart"
-import LeftPart from "@/app/components/LeftPart"
+import MainPart from "./components/MainPart";
 
 export default function Home() {
   return (
@@ -9,8 +8,7 @@ export default function Home() {
       <div className="_Main1">
         <Header />
         <div className="_homepage">
-          <LeftPart />
-          <RightPart />
+          <MainPart />
         </div>
       </div>
     </>

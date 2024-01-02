@@ -20,20 +20,27 @@ const PasswordShow: React.FC<Props> = ({ passwordLength }) => {
             setLength2("Very Weak");
             setBackgroundColor2("red");
         }
-        else if (passwordLength < 10 && passwordLength >= 6) {
+        else if (passwordLength < 9 && passwordLength >= 6) {
             setLength2("Weak");
             setBackgroundColor2("yellow");
         }
-        else if (passwordLength < 15 && passwordLength >= 10) {
+        else if (passwordLength < 14 && passwordLength >= 9) {
+            setLength2("Good");
+            setBackgroundColor2("purple");
+        }
+        else if (passwordLength < 17 && passwordLength >= 14) {
             setLength2("Strong");
             setBackgroundColor2("blue");
         }
-        else if (passwordLength <= 20 && passwordLength >= 15) {
+        else if (passwordLength <= 20 && passwordLength >= 17) {
             setLength2("Very Strong");
             setBackgroundColor2("green")
         }
-    },[passwordLength])
+    },[passwordLength]);
 
+    // function passwordGenerate(password:number){
+        
+    // }
 
     return (
         <>
