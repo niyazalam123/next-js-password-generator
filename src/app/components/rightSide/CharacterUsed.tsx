@@ -1,29 +1,37 @@
 import React, { useEffect, useState } from 'react'
 
-interface Props{
-    capital:boolean;
-    small:boolean;
-    digit:boolean;
-    charc:boolean
+interface Props {
+    capital: boolean;
+    small: boolean;
+    digit: boolean;
+    charc: boolean
 }
 
 interface PropsData {
-    setConCgd:React.Dispatch<React.SetStateAction<Props>>;
-    condChd:Props;
-    passwordGenerator:(arg:number)=>void;
-    passwordLength:number;
+    setConCgd: React.Dispatch<React.SetStateAction<Props>>;
+    condChd: Props;
+    passwordGenerator: (arg: number) => void;
+    passwordLength: number;
 }
-const CharacterUsed:React.FC<PropsData> = ({setConCgd,condChd,passwordGenerator,passwordLength}) => {
-    
-    useEffect(()=>{
+
+const CharacterUsed: React.FC<PropsData> = ({ setConCgd, condChd, passwordGenerator, passwordLength }) => {
+
+    useEffect(() => {
         passwordGenerator(passwordLength)
-    },[condChd])
-    function characterSelect(e:any){
-        const {name,checked} = e.target;
-        setConCgd((prev):Props=>{
+    }, [condChd]);
+
+    function characterSelect(e: any) {
+        const { name, checked } = e.target;
+        const updatedState = { ...condChd };
+
+        // Prevent unchecking the last checkbox
+        if (!checked && Object.values(updatedState).filter((val) => val).length === 1) {
+            return;
+        }
+        setConCgd((prev): Props => {
             return {
                 ...prev,
-                [name]:checked
+                [name]: checked,
             }
         })
     }
@@ -36,42 +44,42 @@ const CharacterUsed:React.FC<PropsData> = ({setConCgd,condChd,passwordGenerator,
                     </div>
                     <div className='_char4'>
                         <div className='_char5'>
-                            <input 
-                                type="checkbox" 
-                                name="capital" 
-                                id="one1" 
-                                onChange={characterSelect} 
-                                checked = {condChd.capital}
+                            <input
+                                type="checkbox"
+                                name="capital"
+                                id="one1"
+                                onChange={characterSelect}
+                                checked={condChd.capital}
                             />
                             <label htmlFor="one1">ABC</label>
                         </div>
                         <div className='_char5'>
-                            <input 
-                                type="checkbox" 
-                                name="small" 
-                                id="one2" 
-                                onChange={characterSelect} 
-                                checked = {condChd.small}
+                            <input
+                                type="checkbox"
+                                name="small"
+                                id="one2"
+                                onChange={characterSelect}
+                                checked={condChd.small}
                             />
                             <label htmlFor="one2">abc</label>
                         </div>
                         <div className='_char5'>
-                            <input 
-                                type="checkbox" 
-                                name="digit" 
-                                id="one3" 
-                                onChange={characterSelect} 
-                                checked = {condChd.digit}
+                            <input
+                                type="checkbox"
+                                name="digit"
+                                id="one3"
+                                onChange={characterSelect}
+                                checked={condChd.digit}
                             />
                             <label htmlFor="one3">123</label>
                         </div>
                         <div className='_char5'>
-                            <input 
-                                type="checkbox" 
-                                name="charc" 
-                                id="one4" 
-                                onChange={characterSelect} 
-                                checked = {condChd.charc}
+                            <input
+                                type="checkbox"
+                                name="charc"
+                                id="one4"
+                                onChange={characterSelect}
+                                checked={condChd.charc}
                             />
                             <label htmlFor="one4">#$&</label>
                         </div>

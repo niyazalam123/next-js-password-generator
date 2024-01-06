@@ -16,6 +16,7 @@ ul{
 .container{
   max-width: 1366px !important;
   width: 100%;
+  margin:0px auto;
 }
 body{
   background-image: url("https://static3.avast.com/10002656/web/i/v2/components/bg/bg-faint-orange.svg");
